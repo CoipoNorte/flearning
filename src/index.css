@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-vue-green: #42b883;
+  --color-vue-green-light: #5ed3a0;
+  --color-vue-green-dark: #2e8b63;
+  --color-vue-dark: #35495e;
+  --color-vue-dark-light: #476582;
+  --color-vue-dark-deep: #2c3e50;
+  --color-svelte-orange: #ff3e00;
+  --color-svelte-light: #ff6b35;
+  --color-ts-blue: #3178c6;
+  --color-ts-light: #5a9bd5;
+  --color-sass-pink: #cc6699;
+  --color-sass-light: #e088b0;
+  --color-surface-bg: #1a1e24;
+  --color-surface-card: #21262d;
+  --color-surface-hover: #282e36;
+  --color-surface-border: #30363d;
+  --color-surface-light: #2d333b;
+  --color-text-primary: #e6edf3;
+  --color-text-secondary: #8b949e;
+  --color-text-muted: #6e7681;
+
+  --animate-fade-in: fadeIn 0.35s ease-out;
+  --animate-slide-in: slideIn 0.3s ease-out;
+  --animate-vue-pulse: vuePulse 2.5s ease-in-out infinite;
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateX(-10px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes vuePulse {
+    0%, 100% { box-shadow: 0 0 12px rgba(66, 184, 131, 0.2); }
+    50% { box-shadow: 0 0 24px rgba(66, 184, 131, 0.4); }
+  }
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--color-surface-bg);
+  color: var(--color-text-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar { width: 7px; }
+::-webkit-scrollbar-track { background: var(--color-surface-bg); }
+::-webkit-scrollbar-thumb { background: var(--color-vue-green); border-radius: 4px; }
+::selection { background: rgba(66, 184, 131, 0.3); color: white; }
+
+@utility vue-card {
+  background: var(--color-surface-card);
+  border: 1px solid var(--color-surface-border);
+  border-radius: 8px;
+}
+
+@utility font-code {
+  font-family: 'JetBrains Mono', monospace;
+}
